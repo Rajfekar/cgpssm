@@ -124,19 +124,19 @@
 	<div class="loader-overlay"></div>
 
 	<!-- General JS Scripts -->
-	<script src="admindash/assets/js/atrana.js"></script>
+	<script src="{{asset('admindash/assets/js/atrana.js')}}"></script>
 
 	<!-- JS Libraies -->
-	<script src="admindash/assets/modules/jquery/jquery.min.js"></script>
-	<script src="admindash/assets/modules/bootstrap-5.1.3/js/bootstrap.bundle.min.js"></script>
-	<script src="admindash/assets/modules/popper/popper.min.js"></script>
+	<script src="{{asset('admindash/assets/modules/jquery/jquery.min.js')}}"></script>
+	<script src="{{asset('admindash/assets/modules/bootstrap-5.1.3/js/bootstrap.bundle.min.js')}}"></script>
+	<script src="{{asset('admindash/assets/modules/popper/popper.min.js')}}"></script>
 
 	<!-- Chart Js -->
-	<script src="admindash/assets/modules/apexcharts/apexcharts.js"></script>
-	<script src="admindash/assets/js/ui-apexcharts.js"></script>
+	<script src="{{asset('admindash/assets/modules/apexcharts/apexcharts.js')}}"></script>
+	<script src="{{asset('admindash/assets/js/ui-apexcharts.js')}}"></script>
 
     <!-- Template JS File -->
-	<script src="admindash/assets/js/script.js"></script>
-	<script src="admindash/assets/js/custom.js"></script>
+	<script src="{{asset('admindash/assets/js/script.js')}}"></script>
+	<script src="{{asset('admindash/assets/js/custom.js')}}"></script>
  </body>
 </html>

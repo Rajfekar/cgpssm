@@ -1,18 +1,7 @@
 @include('header')
 <!-- End Header -->
   <main id="main">
- <div>
-
-  @foreach ($books as $book)
-      <p>{{$book->bookid}}</p>
-      <p>{{$book->title}}</p>
-      <p>{{$book->author}}</p>
-      <p>{{$book->image}}</p>
-      <p>{{$book->description}}</p>
-      <p>{{$book->price}}</p>
-      <p>{{$book->publisher}}</p>
-  @endforeach
- </div>
+ 
     <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
       <div class="container">
@@ -53,207 +42,33 @@
           </div>
         </div>
 
-       
-        <div class="row portfolio-container">
 
-           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/PSSA/Tulsivanam_Cover.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Tulsivanam</h4>
-                <h4>Brahmarshi Pitamaha Patriji</h4>
 
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/PSSA/Tulsivanam_Cove.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+<div class="row justify-evenly">
 
-                
-            </div>
-          </div>
-          </div>
-           <div class="row portfolio-container">
 
-           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/PSSA/Geeta Cover.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Shrimad Bhagwat</h4>
-                <h4> Geeta</h4>
+@foreach ($books as $book)
+<div class="col-md-4">
 
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/PSSA/Tulsivanam_Cove.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
 
-                
-            </div>
-          </div>
-          </div>
-          <div class="row portfolio-container">
-
-           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/PSSA/Art & Science.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Meditation </h4>
-                <h4>Art & Science</h4>
-
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/PSSA/Art & Science_.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-
-                
-            </div>
-          </div>
-        </div>
-        <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/PSSA/Book11.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>SPIRITUAL VALUES</h4>
-                <h4>Class VI</h4>
-
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/PSSA/Art & Science_.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-
-                
-            </div>
-          </div>
-        </div>-->
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/PSSA/Class - VI.jpg"     class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>SPIRITUAL VALUES</h4>
-                <h4>Class VI</h4>
-
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/PSSA/Back page-VI.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-
-                
-            </div>
-          </div>
+<div class=" product-card  ">
+  <img src="{{'/storage/books/'. $book->image}}" alt="Book Cover">
+  <h3 class="product-title">{{$book->title}}</h3>
+  <p class="product-author"><b>Author</b> - {{$book->author}}</p>
+  <p class="product-price">₹{{$book->price}}</p>
+  <button class="add-to-cart">Buy Now</button>
+  <p class="product-description">{{$book->description}}</p>
+ 
+  <div class="product-rating">
+    <span class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+    <span class="rating-value">(4.0)</span>
+  </div>
 </div>
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/PSSA/Class - VII.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>SPIRITUAL VALUES</h4>
-                <p>Class VII</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/PSSA/Back page-VII.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/PSSA/Class - VIII.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>SPIRITUAL VALUES</h4>
-                <p>Class VIII</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/PSSA/Back page-VIII.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/PSSA/Class - 9th.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>SPIRITUAL VALUES</h4>
-                <p>Class IX</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/PSSA/Class - 9th_.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/PSSA/Class -X.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>SPIRITUAL VALUES</h4>
-                <p>Class X</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/PSSA/Back page-X.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/PSSA/Class -XI_.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>SPIRITUAL VALUES</h4>
-                <p>Class XI</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/PSSA/Class -12.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>SPIRITUAL VALUES</h4>
-                <p>Class XII</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/PSSA/Back page-12.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/PSSA/Cover pagel Graduate- II_.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>SPIRITUAL VALUES</h4>
-                <p>Card</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/PSSA/Cover pagel Graduate- II.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/PSSA/portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-        </div>
+</div>
+@endforeach
+</div>
+  
+</div>
 
       </div>
     </section><!-- End Our Portfolio Section -->

@@ -26,14 +26,20 @@ Route::get('/cgpssm_info', function () {
     return view('cgpssm_info');
 });
 Route::get('/store', [BookController::class, 'store']);
+
+Route::controller(OrderController::class)->group(function () {
+    Route::get('/orders/{id}', 'show');
+    Route::post('/orders', 'store');
+});
 Route::get('/admin_dash', [AdminController::class, 'index']);
 Route::get('/booklist', [AdminController::class, 'booklist']);
 Route::get('/userlist', [AdminController::class, 'userlist']);
 Route::get('/add-book', [AdminController::class, 'addbook']);
-Route::get('/edit-book/{id}', [AdminController::class, 'editbook']);
+Route::get('/editbook/{book}', [AdminController::class, 'editbook']);
 Route::post('/update-book', [AdminController::class, 'updatebook']);
 Route::post('/add-book2', [AdminController::class, 'addbook2']);
 Route::get('/delete-book/{id}', [AdminController::class, 'deletebook']);
+Route::get('/delete-user/{id}', [AdminController::class, 'deleteuser']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

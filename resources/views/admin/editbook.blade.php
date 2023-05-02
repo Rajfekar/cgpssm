@@ -12,126 +12,25 @@
 	<div class="content-start transition">
 		<div class="container-fluid dashboard">
 			<div class="content-header">
-				<h1>Dashboard</h1>
+				<h1>Edit Book Information</h1>
 				<p></p>
 			</div>
 			
 			<div class="row">
-				<div class="col-md-6 col-lg-3">
-					<div class="card">
-						<div class="card-body">
-							<div class="row">
-								<div class="col-4 d-flex align-items-center">
-									<i class="fas fa-inbox icon-home bg-primary text-light"></i>
-								</div>
-								<div class="col-8">
-									<p>Revenue</p>
-									<h5>$65</h5>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-6 col-lg-3">
-					<div class="card">
-						<div class="card-body">
-							<div class="row">
-								<div class="col-4 d-flex align-items-center">
-									<i class="fas fa-clipboard-list icon-home bg-success text-light"></i>
-								</div>
-								<div class="col-8">
-									<p>Orders</p>
-									<h5>3000</h5>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-6 col-lg-3">
-					<div class="card">
-						<div class="card-body">
-							<div class="row">
-								<div class="col-4 d-flex align-items-center">
-									<i class="fas fa-chart-bar  icon-home bg-info text-light"></i>
-								</div>
-								<div class="col-8">
-									<p>Sales</p>
-									<h5>5500</h5>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-6 col-lg-3">
-					<div class="card">
-						<div class="card-body">
-							<div class="row">
-								<div class="col-4 d-flex align-items-center">
-									<i class="fas fa-id-card  icon-home bg-warning text-light"></i>
-								</div>
-								<div class="col-8">
-									<p>Employes</p>
-									<h5>256</h5>
-								</div>
-							</div>
-						</div>
-					</div>
-
-				</div>
 		
-				<div class="col-md-6">
-					<div class="card">
-						<div class="card-header">
-						</div>
-						<div class="card-body">
-							<div id="columnchart"></div>
-						</div>
-					</div>
-				</div>
+
+			
+
+			
+
+			
+
 				
-				<div class="col-md-6">
-					<div class="card">
-						<div class="card-header">
-							<h4>Recent Messages</h4>
-						</div>
-						<div class="card-body pb-4">
-							<div class="recent-message d-flex px-4 py-3">
-								<div class="avatar avatar-lg">
-									<img src="admindash/assets/images/message/4.jpg">
-								</div>
-								<div class="name ms-4">
-									<h5 class="mb-1">Hank Schrader</h5>
-									<h6 class="text-muted mb-0">@johnducky</h6>
-								</div>
-							</div>
-							<div class="recent-message d-flex px-4 py-3">
-								<div class="avatar avatar-lg">
-									<img src="admindash/assets/images/message/5.jpg">
-								</div>
-								<div class="name ms-4">
-									<h5 class="mb-1">Dean Winchester</h5>
-									<h6 class="text-muted mb-0">@imdean</h6>
-								</div>
-							</div>
-							<div class="recent-message d-flex px-4 py-3">
-								<div class="avatar avatar-lg">
-									<img src="admindash/assets/images/message/1.jpg">
-								</div>
-								<div class="name ms-4">
-									<h5 class="mb-1">John Doe</h5>
-									<h6 class="text-muted mb-0">@Doejohn</h6>
-								</div>
-							</div>
-							<div class="px-4">
-								<button class='btn btn-block btn-xl btn-primary font-bold mt-3'>Start
-									Conversation</button>
-							</div>
-						</div>
-					</div>
-				</div>
+		
+
+				
+				
+			
 
 				<div class="col-md-12">
 					<div class="card">
@@ -139,9 +38,49 @@
 							<h4>Books List</h4>
 						</div>
 						<div class="card-body"> 
-						<div class="table-responsive"> 
-					       {{-- table --}}
-						  </div>
+						<form action="{{url('/update-book')}}" method="post" class="form-group" enctype="multipart/form-data">
+		@csrf
+          <div class="col-md-4">
+			<label for="bookid" class="form-label">Book ID</label>
+			<input type="text" class="form-control" id="bookid" name="bookid" value="{{$book->bookid}}" >
+		  </div>
+
+		    <div class="col-md-4">
+			<label for="title" class="form-label">Book Title</label>
+			<input type="text" class="form-control" id="title" value="{{$book->title}}" name="title">
+		  </div>
+
+		   <div class="col-md-4">
+			<label for="author" class="form-label">Book Author</label>
+			<input type="text" class="form-control" id="author" value="{{$book->author}}" name="author">
+		  </div>
+		  
+		   <div class="col-md-4">
+			<label for="description" class="form-label">Book Description</label>
+			<input type="text" class="form-control" id="description" value="{{$book->description}}" name="description">
+			@error('description')
+				<p>{{$message}}</p>
+			@enderror
+		  </div>
+
+		   <div class="col-md-4">
+			<label for="price" class="form-label">Book Price</label>
+			<input type="text" class="form-control" id="price" value="{{$book->price}}" name="price">
+		  </div>
+
+		   <div class="col-md-4">
+			<label for="publisher" class="form-label">Book Publisher</label>
+			<input type="text" class="form-control" id="publisher" value="{{$book->publisher}}" name="publisher">
+		  </div>
+
+		   <div class="col-md-4">
+			<label for="image" class="form-label">Book Image</label>
+			<input type="file" class="form-control" id="image" name="image">
+		  </div>
+
+		<button class="btn btn-primary" type="submit">Update</button>
+
+		  </form>
 						</div>
 					</div>
 				</div>
@@ -166,19 +105,19 @@
 	<div class="loader-overlay"></div>
 
 	<!-- General JS Scripts -->
-	<script src="admindash/assets/js/atrana.js"></script>
+	<script src="{{asset('admindash/assets/js/atrana.js')}}"></script>
 
 	<!-- JS Libraies -->
-	<script src="admindash/assets/modules/jquery/jquery.min.js"></script>
-	<script src="admindash/assets/modules/bootstrap-5.1.3/js/bootstrap.bundle.min.js"></script>
-	<script src="admindash/assets/modules/popper/popper.min.js"></script>
+	<script src="{{asset('admindash/assets/modules/jquery/jquery.min.js')}}"></script>
+	<script src="{{asset('admindash/assets/modules/bootstrap-5.1.3/js/bootstrap.bundle.min.js')}}"></script>
+	<script src="{{asset('admindash/assets/modules/popper/popper.min.js')}}"></script>
 
 	<!-- Chart Js -->
-	<script src="admindash/assets/modules/apexcharts/apexcharts.js"></script>
-	<script src="admindash/assets/js/ui-apexcharts.js"></script>
+	<script src="{{asset('admindash/assets/modules/apexcharts/apexcharts.js')}}"></script>
+	<script src="{{asset('admindash/assets/js/ui-apexcharts.js')}}"></script>
 
     <!-- Template JS File -->
-	<script src="admindash/assets/js/script.js"></script>
-	<script src="admindash/assets/js/custom.js"></script>
+	<script src="{{asset('admindash/assets/js/script.js')}}"></script>
+	<script src="{{asset('admindash/assets/js/custom.js')}}"></script>
  </body>
 </html>

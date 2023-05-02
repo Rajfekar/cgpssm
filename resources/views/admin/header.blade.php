@@ -10,15 +10,16 @@
 	<title>Admin CGPSSM</title>
 
 	<!-- Bootstrap CSS-->
-	<link rel="stylesheet" href="admindash/assets/modules/bootstrap-5.1.3/css/bootstrap.css">
+	
+	<link rel="stylesheet" href="{{asset('admindash/assets/modules/bootstrap-5.1.3/css/bootstrap.css')}}">
 	<!-- Style CSS -->
-	<link rel="stylesheet" href="admindash/assets/css/style.css">
+	<link rel="stylesheet" href="{{asset('admindash/assets/css/style.css')}}">
 	<!-- FontAwesome CSS-->
-	<link rel="stylesheet" href="admindash/assets/modules/fontawesome6.1.1/css/all.css">
+	<link rel="stylesheet" href="{{asset('admindash/assets/modules/fontawesome6.1.1/css/all.css')}}">
 	<!-- Boxicons CSS-->
-	<link rel="stylesheet" href="admindash/assets/modules/boxicons/css/boxicons.min.css">
+	<link rel="stylesheet" href="{{asset('admindash/assets/modules/boxicons/css/boxicons.min.css')}}">
 	<!-- Apexcharts  CSS -->
-	<link rel="stylesheet" href="admindash/assets/modules/apexcharts/apexcharts.css">
+	<link rel="stylesheet" href="{{asset('admindash/assets/modules/apexcharts/apexcharts.css')}}">
 </head>
 <body>
   
@@ -92,7 +93,7 @@
 			 
 				  <li class="nav-item dropdown">
 					<a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					  <img src="admindash/assets/images/avatar/avatar-1.png" alt="">
+					  <img src="{{asset('admindash/assets/images/avatar/avatar-1.png')}}" alt="img">
 					</a>
 					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="my-profile.html"><i class="fa fa-user size-icon-1"></i> <span>My Profile</span></a>
@@ -112,7 +113,7 @@
 			
 			<!-- Logo -->
 			<div class="logo">
-					<h2 class="mb-0"><img src="admindash/assets/images/logo.png"> Admin</h2>
+					<h2 class="mb-0"><img src="{{asset('admindash/assets/images/logo.png')}}"> Admin</h2>
 			</div>
 
             <ul class="side-menu">

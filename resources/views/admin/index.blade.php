@@ -20,7 +20,7 @@
 								</div>
 								<div class="col-8">
 									<p>Revenue</p>
-									<h5>$65</h5>
+									<h5>{{$revenue}}</h5>
 								</div>
 							</div>
 						</div>
@@ -36,7 +36,7 @@
 								</div>
 								<div class="col-8">
 									<p>Orders</p>
-									<h5>3000</h5>
+									<h5>{{$ocount}}</h5>
 								</div>
 							</div>
 						</div>
@@ -51,8 +51,8 @@
 									<i class="fas fa-chart-bar  icon-home bg-info text-light"></i>
 								</div>
 								<div class="col-8">
-									<p>Sales</p>
-									<h5>5500</h5>
+									<p>Books</p>
+									<h5>{{$bcount}}</h5>
 								</div>
 							</div>
 						</div>
@@ -67,8 +67,8 @@
 									<i class="fas fa-id-card  icon-home bg-warning text-light"></i>
 								</div>
 								<div class="col-8">
-									<p>Employes</p>
-									<h5>256</h5>
+									<p>Users</p>
+									<h5>{{$ucount}}</h5>
 								</div>
 							</div>
 						</div>
@@ -137,6 +137,7 @@
 						<table class="table table-striped">
 							<thead>
 							  <tr>
+								<th>N</th>
 								<th scope="col">Order Id</th>
 								<th scope="col">Billing Name</th>
 								<th scope="col">Date</th>
@@ -147,45 +148,22 @@
 							  </tr>
 							</thead>
 							<tbody>
-							  <tr>
-								<th scope="row">#SK2548	</th>
-								<td>Neal Matthews</td>
-								<td>07 Oct, 2022</td>
-								<td>$400</td>
-								<td><span class="text-success">Paid</span></td>
-								<td>Mastercard</td>
-								<td><button class="btn btn-primary">View Details</button></td>
-							  </tr>
-
-							  <tr>
-								<th scope="row">#SK2548	</th>
-								<td>Neal Matthews</td>
-								<td>07 Oct, 2022</td>
-								<td>$400</td>
-								<td><span class="text-success">Paid</span></td>
-								<td>Visa</td>
-								<td><button class="btn btn-primary">View Details</button></td>
-							  </tr>
-
-							  <tr>
-								<th scope="row">#SK2548	</th>
-								<td>Neal Matthews</td>
-								<td>07 Oct, 2022</td>
-								<td>$400</td>
-								<td><span class="text-danger">Chargeback</span></td>
-								<td>Paypal</td>
-								<td><button class="btn btn-primary">View Details</button></td>
-							  </tr>
-
-							  <tr>
-								<th scope="row">#SK2548	</th>
-								<td>Neal Matthews</td>
-								<td>07 Oct, 2022</td>
-								<td>$400</td>
-								<td><span class="text-warning">Refund</span></td>
-								<td>Visa</td>
-								<td><button class="btn btn-primary">View Details</button></td>
-							  </tr>
+								@php
+									$i = 1
+								@endphp
+								@foreach ($order as $item)
+								<tr>
+									<th>{{$i++}}</th>
+									<th scope="row">{{$item->orderid}}	</th>
+									<td>{{$item->billingname}}</td>
+									<td>{{$item->orderdate}}</td>
+									<td>{{$item->amount}}</td>
+									<td><span class="text-success">{{$item->payment_status}}</span></td>
+									<td>{{$item->payment_method}}</td>
+									<td><button class="btn btn-primary">{{"View Details"}}</button></td>
+								</tr>
+								@endforeach						
+							 
 							</tbody>
 						  </table>
 						  </div>
@@ -213,19 +191,19 @@
 	<div class="loader-overlay"></div>
 
 	<!-- General JS Scripts -->
-	<script src="admindash/assets/js/atrana.js"></script>
+	<script src="{{asset('admindash/assets/js/atrana.js')}}"></script>
 
 	<!-- JS Libraies -->
-	<script src="admindash/assets/modules/jquery/jquery.min.js"></script>
-	<script src="admindash/assets/modules/bootstrap-5.1.3/js/bootstrap.bundle.min.js"></script>
-	<script src="admindash/assets/modules/popper/popper.min.js"></script>
+	<script src="{{asset('admindash/assets/modules/jquery/jquery.min.js')}}"></script>
+	<script src="{{asset('admindash/assets/modules/bootstrap-5.1.3/js/bootstrap.bundle.min.js')}}"></script>
+	<script src="{{asset('admindash/assets/modules/popper/popper.min.js')}}"></script>
 
 	<!-- Chart Js -->
-	<script src="admindash/assets/modules/apexcharts/apexcharts.js"></script>
-	<script src="admindash/assets/js/ui-apexcharts.js"></script>
+	<script src="{{asset('admindash/assets/modules/apexcharts/apexcharts.js')}}"></script>
+	<script src="{{asset('admindash/assets/js/ui-apexcharts.js')}}"></script>
 
     <!-- Template JS File -->
-	<script src="admindash/assets/js/script.js"></script>
-	<script src="admindash/assets/js/custom.js"></script>
+	<script src="{{asset('admindash/assets/js/script.js')}}"></script>
+	<script src="{{asset('admindash/assets/js/custom.js')}}"></script>
  </body>
 </html>
