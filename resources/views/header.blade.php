@@ -112,7 +112,13 @@
             <li><a href="about_pssa.php">About PSSA</a></li>
              <li><a href="activity.php">Activity</a></li>
              <li><a href="member.php">Members</a></li>
-             
+             <li>
+              <a href="#">
+               {{-- <img src="{{ asset('/shoppingcart100.png') }}" alt="cart" srcset="" > --}}
+              {{'5'}}
+                           
+                          </a>
+                        </li>
           </ul>
           </li>
           
@@ -142,6 +148,9 @@
           </li>
           <li><a class="nav-link scrollto" href="store.php">Store</a></li>
           <li><a class="nav-link scrollto" href="contact-us.php">Contact</a></li>
+          <li><a class="nav-link scrollto" href="">
+            <i class="fa-regular fa-cart-shopping"></i>5
+          </a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
