@@ -5,7 +5,21 @@
     <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
       <div class="container">
+@php
+ $cartList = session()->get('cart');
+@endphp
+@foreach ($cartList as $key => $item)
+<h2>
+  {{$key}}
+  {{$item["id"]}}
+  {{$item["name"]}}
+  {{$item["price"]}}
+  {{$item["quantity"]}}
+  {{$item['price']*$item['quantity']}}
 
+</h2>
+@endforeach
+       
         <div class="d-flex justify-content-between align-items-center">
           <h2>PSSA</h2>
            <ol>
@@ -56,7 +70,17 @@
   <h3 class="product-title">{{$book->title}}</h3>
   <p class="product-author"><b>Author</b> - {{$book->author}}</p>
   <p class="product-price">₹{{$book->price}}</p>
-  <button class="add-to-cart">Buy Now</button>
+  {{-- <a class="add-to-cart btn btn-primary" href="">Add To Cart</a> --}}
+   <form method="POST" action="{{route('add_to_cart')}}">
+      @csrf
+      <input type="hidden" name="book_id" value="{{$book->id}}">
+      <div class="input-group">
+        <input type="number" name="quantity" value="1" min="1" max="10" class="form-control">
+        <div class="input-group-append">
+          <button type="submit" class="btn btn-primary">Add to Cart</button>
+        </div>
+      </div>
+    </form>
   <p class="product-description">{{$book->description}}</p>
  
   <div class="product-rating">
